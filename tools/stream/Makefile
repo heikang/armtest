@@ -1,19 +1,14 @@
 ################################################################################
-BUILD := nbench-byte-2.2.3
+# http://www.cs.virginia.edu/stream/FTP/Code/stream.c
+BUILD := stream
 ################################################################################
 .PHONY: $(BUILD) clean distclean
 defalut: $(BUILD)
 ################################################################################
 
-TARGETS=nbench
+TARGETS= $(BUILD)
 
-download:
-	@if [ ! -f $(BUILD).tar.gz ]; then curl --insecure -O http://mirrors.163.com/gentoo/distfiles/$(BUILD).tar.gz; fi
-
-$(BUILD): download
-	@if [ ! -d  "$(BUILD)" ]; then\
-		tar -xzf $(BUILD).tar.gz;\
-	fi
+$(BUILD):
 	make CC=$(CC) CFLAGS=$(CFLAGS) -C $(BUILD)
 	for target in $(TARGETS);do \
 		cp $(BUILD)/$$target $(OUTPUT); \

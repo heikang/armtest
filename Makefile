@@ -1,14 +1,14 @@
 ################################################################################
-CROSS_COMPILE = arm-linux-
+CROSS_COMPILE = arm-himix100-linux-
 ################################################################################
 
 CC = $(CROSS_COMPILE)gcc
 
 STRIP = $(CROSS_COMPILE)strip
 
-CFLAGS = -static
+CFLAGS = -static -Wall
 
-TOOLLIST = nbench
+TOOLLIST = nbench stream
 
 TOOLS_SRC = tools
 
@@ -22,10 +22,10 @@ all:
 	done
 
 clean:
-	-make -C $(TOOLS_SRC)/$(TOOLLIST) clean
+	for comp in $(TOOLLIST);do make -C $(TOOLS_SRC)/$$comp clean;done
 
 mrproper:
-	-make -C $(TOOLS_SRC)/$(TOOLLIST) mrproper
+	for comp in $(TOOLLIST);do make -C $(TOOLS_SRC)/$$comp mrproper;done
 
-distclean: clean
-	-make -C $(TOOLS_SRC)/$(TOOLLIST) distclean
+distclean:
+	for comp in $(TOOLLIST);do make -C $(TOOLS_SRC)/$$comp distclean;done
