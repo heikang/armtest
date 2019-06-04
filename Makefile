@@ -1,5 +1,5 @@
 ################################################################################
-CROSS_COMPILE = arm-himix100-linux-
+CROSS_COMPILE = arm-linux-
 ################################################################################
 
 CC = $(CROSS_COMPILE)gcc
@@ -8,7 +8,7 @@ STRIP = $(CROSS_COMPILE)strip
 
 CFLAGS = -static -Wall
 
-TOOLLIST = nbench stream
+TOOLLIST = nbench stream vmstat
 
 TOOLS_SRC = tools
 

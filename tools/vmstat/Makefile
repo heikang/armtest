@@ -1,6 +1,5 @@
 ################################################################################
-# http://www.cs.virginia.edu/stream/FTP/Code/stream.c
-BUILD := stream
+BUILD := vmstat
 ################################################################################
 .PHONY: $(BUILD) clean distclean
 defalut: $(BUILD)
