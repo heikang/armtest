@@ -8,7 +8,7 @@ STRIP = $(CROSS_COMPILE)strip
 
 CFLAGS = -static -Wall
 
-TOOLLIST = nbench stream vmstat
+TOOLLIST = nbench ncurses stream vmstat
 
 TOOLS_SRC = tools
 

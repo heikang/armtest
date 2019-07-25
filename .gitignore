@@ -10,11 +10,21 @@
 # Normal rules
 #
 
-*.tar.gz
+.*
+*.o
+*.o.*
+*.a
+*.s
+*.ko
+*.so.dbg
+*.mod.c
+*.i
+*.lst
+*.symtypes
+*.order
+*.bak
 
-nbench/nbench-*
-ncurses/ncurses-*
+!.gitignore
 
-stream/stream/stream
-vmstat/vmstat/vmstat
-
+tags
+ctags
